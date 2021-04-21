@@ -55,3 +55,5 @@ Correct it: `echo "Sehr geehrte Bewohner*innen des Planeten Jupiter" > hallo.txt
 .. record the change amending the previous one `pijul record hallo.txt --message "Add hallo" --amend <hash>`{{copy}} (*The content is added to the clipboard, paste it into the terminal and replace `<hash>` by the hash you found in the previous step*)
 
 If you run `pijul log`{{execute}} again, you will find that the previous "Add hallo" change is gone and a new one is on top of the log. This is a presentation of the aforementioned commutativity of changes and channels being just a set of edits without implied total order.
+
+Note that all changes are still present in the `.pijul/changes/**` index just differently selected in the current pristine.
