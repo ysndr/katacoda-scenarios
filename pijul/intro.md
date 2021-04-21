@@ -16,6 +16,7 @@ So lets start, shall we?
 Pijul is pronounced: **/ˈpiːχul/**
 
 ![](https://i.imgur.com/NtGaNA8.png)
+
 Pronunciation is important...
 
 ### Okay, but what is Pijul?
@@ -53,7 +54,7 @@ index 6be3ee1d93a5..d68a2bcc9ae1 100644
  		if (!ret)
  			return gc0310_init(sd);
 ```
-*a random patch taken from [linux-staging](https://lore.kernel.org/linux-staging/)
+*a random patch taken from [linux-staging](https://lore.kernel.org/linux-staging/)*
 
 In reality, git is computing these diffs on demand when comparing two commits!
 
