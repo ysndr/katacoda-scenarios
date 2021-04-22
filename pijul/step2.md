@@ -35,12 +35,12 @@ But first, let's create some content:
 
 Now lets add them: `pijul add hello.txt`{{execute}}
 
-And record them as change (make sure to add a message): `pijul record`{{execute}}
+And record them as change (make sure to add a message): `pijul record --message "Add Hello"`{{execute}}
 
 As you can see the `pijul record` command shows all the hunks/scoped changes available.
 
 If you want to skip the `add` part you can `record` files directly running e.g.: `pijul record ciao.txt`{{execute}}
 
-Now say you are unhappy by a change you have `add`ed (`pijul add ciao.txt --message "Add Hello"`{{execute}}) and want to "unstage" it run the rather intimidatingly sounding `pijul remove ciao.txt --message "Add Ciao"` {{execute}}
+Now say you are unhappy by a change you have `add`ed (`pijul add ciao.txt`{{execute}}) and want to "unstage" it run the rather intimidatingly sounding `pijul remove ciao.txt` {{execute}}
 
 Here we have learned how to add and record changes to pijul but mistakes happen. Click *CONTINUE* to see how to handle them.

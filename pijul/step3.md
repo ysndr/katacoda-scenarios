@@ -11,7 +11,7 @@ Notably about pijul is that changes, as long as they don't have dependencies, ar
 
 If you want to amend the previous ~commit~ change like in git you can pass an `--amend` flag to the record. Yet, unlike git not only latest changes can be amended:
 
-Say you recorded some change: `pijul record hallo.txt --message "Add hallo"`{{execute}} and then another `pijul record ciao.txt --message "Add hallo"`{{execute}}.
+Say you recorded some change: `pijul record hallo.txt --message "Add hallo"`{{execute}} and then another `pijul record ciao.txt --message "Add Ciao"`{{execute}}.
 
 What if you made a terrible mistake in `hallo.txt`?
 
