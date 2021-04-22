@@ -2,10 +2,12 @@
 
 In this tutorial you will learn how to use the version control system **Pijul**.
 
-It will follow ypu through the basics of change tracking, branching off new ideas and collaborating.
+It will follow you through the basics of change tracking, branching off new ideas and collaborating.
 All examples will also relate to the respective GIT operations if applicable. Knowledge in git is therefore strongly required as a prerequisite.
 
 The rest of this introduction will introduce and motivate Pijul. In the following steps you can go hands on with pijul using it as the version control system for a fictive project. Finally you will be shown a glimpse of how Pijul supports collaborating.
+
+**NOTE: Pijul is still in a very early prerelease. Although its authors are content that the algorithms work the UI itself might not be fully functional yet!**
 
 So lets start, shall we?
 
