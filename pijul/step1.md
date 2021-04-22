@@ -1,6 +1,6 @@
 # Setting up
 
-*Wait until katacoda has inititalized the environment*
+*⚠️ Wait until katacoda has inititalized the environment ⚠️*
 
 You will find yourself in a docker image with pijul available. The working directory is mounted to the `workspace/` folder in the editor window.
 If you want to follow this tutorial locally install pijul as described in its [documentation](https://pijul.org/manual/installing.html)

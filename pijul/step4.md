@@ -1,5 +1,7 @@
 # Collaborating and publishing
 
+*⚠️ The pijul nest server is still unstable and this step might not work, if you get connection error try later ⚠️*
+
 This step will teach you how to clone an existing repository and collaborate.
 
 ## Concepts
@@ -18,10 +20,10 @@ This step will teach you how to clone an existing repository and collaborate.
 
 1. First let's clone our first repository `pijul clone https://nest.pijul.com/ysndr/Explorations`{{execute}}. And we can go in the cloned repository `cd Explorations`{{execute}} and see the files `ls -la`{{execute}}
 
-2. Now edit the hello file `vim hello.txt`{{execute}}. You can add your name and say hello.
+2. Now edit the hello file `vim hello.txt`{{execute}}. You can add your name, say hello and save it (:wq). 
 
 3. To add the file in the commit, we execute `pijul add hello.txt`{{execute}}, same as git.
 
 4. Then we can record your change `pijul record`{{execute}} the git equivalent to `git commit`. You can see that an editor is open, you need to add a record message, save and close.
 
-5. OPTIONAL : And finally, you can push the changes to the server with `pijul push username@nest.pijul.com/ysndr/Explorations`. This will automatically create a pull request. Notice that you need to create an account first.
+5. Unlike git, pijul does not have pull request. You simply push to the repository you want to contribute, and the owner can then accept the changes. OPTIONAL : If you create an account, you can now push the changes to the server with `pijul push username@nest.pijul.com/ysndr/Explorations`. This will automatically create a change request to the repository.
