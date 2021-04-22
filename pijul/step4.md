@@ -18,10 +18,10 @@ This step will teach you how to clone an existing repository and collaborate.
 
 1. First let's clone our first repository `pijul clone https://nest.pijul.com/ysndr/Explorations`{{execute}}. And we can go in the cloned repository `cd Explorations`{{execute}} and see the files `ls -la`{{execute}}
 
-2. Now we want to edit our file `vim hello.txt`{{execute}}. You can add some text and save it.
+2. Now edit the hello file `vim hello.txt`{{execute}}. You can add your name and say hello.
 
 3. To add the file in the commit, we execute `pijul add hello.txt`{{execute}}, same as git.
 
 4. Then we can record your change `pijul record`{{execute}} the git equivalent to `git commit`. You can see that an editor is open, you need to add a record message, save and close.
 
-5. And finally, we push your changes to the server with `pijul push https://nest.pijul.com/ysndr/Explorations`
+5. OPTIONAL : And finally, you can push the changes to the server with `pijul push username@nest.pijul.com/ysndr/Explorations`. This will automatically create a pull request. Notice that you need to create an account first.
