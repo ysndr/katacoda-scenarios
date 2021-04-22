@@ -43,11 +43,11 @@ As you can see the `pijul record` command shows all the hunks/scoped changes ava
 
 If you want to skip the `add` part you can `record` files directly running e.g.: `pijul record ciao.txt`{{execute}}
 
-Now say you are unhappy by a change you have `add`ed (`pijul add ciao.txt`{{execute}}) and want to "unstage" it run the rather intimidatingly sounding `pijul remove ciao.txt` {{execute}}
+Now say you are unhappy by a change you have `add`ed (`pijul add ciao.txt --message "Add Hello"`{{execute}}) and want to "unstage" it run the rather intimidatingly sounding `pijul remove ciao.txt --message "Add Ciao"` {{execute}}
 
 If you want to amend the previous ~commit~ change like in git you can pass an `--amend` flag to the record. Yet, unlike git not only latest changes can be amended:
 
-Say you recorded some change: `pijul record hallo.txt --message "Add hallo"` and then another `pijul record ciao.txt --message "Add hallo"`. What if you made a terrible mistake in `hallo.txt`?
+Say you recorded some change: `pijul record hallo.txt --message "Add hallo"`{{execute}} and then another `pijul record ciao.txt --message "Add hallo"`{{execute}}. What if you made a terrible mistake in `hallo.txt`?
 
 Correct it: `echo "Sehr geehrte Bewohner*innen des Planeten Jupiter" > hallo.txt`{{execute}}
 
