@@ -1,17 +1,47 @@
-# Revoking changes
+# Amending Changes
 
-*continuing the previous step*
 
 ## Concepts
 
-Again, think about removing changes. Like amending changes in the step before, in git how do you do that? Usually, it requires rebasing the history. But if you ever rebased a branch in git you see that the identity of all successive commits is changed! This means its **incompatible** with everyone elses history and is therefore strongly discouraged on public branches
+If you were to amend changes in git that are not the HEAD commit, you will need to resort to `git rebase`. But who has used rebase knows that changing a commit will inevitably change the signature of all commits following. The new history created by rebasing will be incompatible with the original one. Therefore in collaborative environments it is strongly discouraged to rebase public branches.
 
-As we've seen before, commutativity in pijul allows us to delete changes (as long no other change depends on it).
+Notably about pijul is that changes, as long as they don't have dependencies, are commutative. That means that unlike git, which tracks edits in a linear log, the order in which the changes are applied does not matter as long as their dependencies are present. This makes pijul far more flexible!
 
 ## Commands
 
-So if we want to get rid of our "hello world" example with pijul you can literally `unrecord` changes.
+If you want to amend the previous ~commit~ change like in git you can pass an `--amend` flag to the record. Yet, unlike git not only latest changes can be amended:
+
+Say you recorded some change: `pijul record hallo.txt --message "Add hallo"`{{execute}} and then another `pijul record ciao.txt --message "Add hallo"`{{execute}}.
+
+What if you made a terrible mistake in `hallo.txt`?
+
+Correct it: `echo "Sehr geehrte Bewohner*innen des Planeten Jupiter" > hallo.txt`{{execute}}
+
+.. find the hash of that commit using `pijul log`{{execute}} (copy it to a to a `./file`{{open}})
+.. record the change amending the previous one `pijul record hallo.txt --message "Add hallo" --amend <hash>`{{copy}} (*The content is added to the clipboard, paste it into the terminal and replace `<hash>` by the hash you found in the previous step*)
+
+If now you run `pijul log`{{execute}} again, you will find that the previous "Add hallo" change is gone and a new one is on top of the log. This is a presentation of the aforementioned commutativity of changes and channels being just a set of edits without implied total order.
+
+Note that all changes are still present in the `.pijul/changes/**` index just differently selected in the current pristine.
+
+### Revoking changes
+
+The same principle holds when revoking changes:
+
+If you want to get rid of our "hello world" example with pijul you can literally `unrecord` changes.
 
 Again first get the change hash using `pijul log`
 
 Then run `pijul unrecord <hash>`{{copy}} (*again paste and substitute `<hash>`*)
+
+### Dependencies
+
+Mind though that unrecording changes other changes depend on is not possible.
+
+Dependencies are shown when you record a change:
+
+`echo "ciao marte" > ciao.txt`{{execute}}
+
+Recording with `pijul record ciao.txt --message "Edit ciao"`{{execute}} will show the dependency to the change *adding* `ciao.txt`
+
+**Pijul therefore encourages keeping changes small in order to limit the scope of dependencies**
