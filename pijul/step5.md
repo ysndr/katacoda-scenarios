@@ -7,7 +7,7 @@ In the current directory, you have 3 files.
 
 
 ## Commands available
-Choose between these commands to complete the challenge
+Choose between these commands to complete the challenge. For help run `pijul --help`{{execute}}.
 
 
 - `pijul init`{{execute}}
