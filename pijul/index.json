@@ -25,11 +25,12 @@
       {
         "title": "Step 5",
         "text": "step5.md",
-        "foreground": "prepare-challenge.sh"
+        "foreground": "prepare-merging.sh"
       },
       {
         "title": "Step 6",
-        "text": "step6.md"
+        "text": "step6.md",
+        "foreground": "prepare-challenge.sh"
       }
     ],
     "intro": {
