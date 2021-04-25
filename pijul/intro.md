@@ -30,11 +30,11 @@ Pronunciation is important...
 
 ### Patch based VCS?
 
-You might ask, ask: What does make a VCS "patch based" and why is git snapshot based while pathces are ubiquitous there as well...?
+You might ask: What does make a VCS "patch based" and why is git snapshot based while pathces are ubiquitous there as well...?
 
-Good question, lets get this straight by looking onto how GIT works
+Good question, let's get this straight by looking onto how GIT works.
 
-Whenever you `git add` a file, git will actually store a snapshot of this file in its index. This means a *copy* of a file is created each time which is the reason why adding a huge, *changing* file to git is a bad idea, as it inflates the git index size.
+Whenever you `git add` a file, git will actually store a snapshot of this file in its index. This means a *copy* of a file is created each time, which is the reason why adding a huge, *changing* file to git is a bad idea, as it inflates the git index size.
 
 Sadly, the git interface is a bit confusing. Git itself and visual clients to it present commits as set of changes. The linux kernel development process is even famous for its patch based contribution process.
 
@@ -60,8 +60,13 @@ index 6be3ee1d93a5..d68a2bcc9ae1 100644
 
 In reality, git is computing these diffs on demand when comparing two commits!
 
-This comes with many implications when it comes to *merging*, *rebasing*/*cherry-picking* and ultimately collaborating we will discover as we go on.
+This has many implications when it comes to *merging*, *rebasing*/*cherry-picking* and ultimately collaborating which we will discover as we go on.
 
-Pijul instead does manage files only using patches. That is it does not store full snapshots of files (full of redundant data) but only its changes.
+Pijul instead does manage files *only using patches*. That is it does not store full snapshots of files (full of redundant data) but only its changes.
 The full state of a version controlled directory is therefore determined by a set of patches and the order they are applied in.
 A main inspiration to this was [DARCS](http://darcs.net/) which trackes changes similarly but comes with its own set of problems pijul tries to address...
+
+
+![Comparison Git v. Pijul](./assets/comparison.png)
+
+*Depicted: Git: snapshots of files; Pijul: sum of all patches*

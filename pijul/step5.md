@@ -5,11 +5,11 @@ This step will first teach you how to create new branches and switch among them.
 
 ## Concepts
 
-1. In git, to create and switch to a new branch, you use `git checkout -b "Branch name"`.
+In git, to create and switch to a new branch, you use `git checkout -b "Branch name"`. You can omit the `-b` to switch toan existing branch: `git checkout "Existing branch name"`. To merge a branch in the current one, you execute `git merge "Branch name"`. If a conflict occur, you get a message.
 
-2. To change branch, you use `git checkout "Existing branch name"`.
+In pijul, instead of branches the concept is called channels. Channels are just different subset of sound changes tracked in the repository. As there is no clear graph between them -- remember: they commute -- channels are "merged" by selecting changes from one channel and just applying them onto another.
 
-3. To merge a branch in the current one, you execute `git merge "Branch name"`. If a conflict occur, you get a message.
+
 
 ## Scenario
 
@@ -26,8 +26,3 @@ Now we want to merge Bob's channel into Alice. To do so, we simply pull the bran
 But you can see `cat todo.txt`{{execute}} that a conflict occurred. To resolve it, simply delete `vim todo.txt`{{execute}} the lines 3, 5 and 7. You can now record the merge `pijul record -a -m "Merge todo"`{{execute}} and switch to the main channel `pijul channel switch main`{{execute}}.
 
 We finally merge Alice's channel into the main one `pijul pull . --from-channel alice`{{execute}}, you can see all the patches we are applying. Our todo is now complete `cat todo.txt`{{execute}}
-
-
-
-
-
