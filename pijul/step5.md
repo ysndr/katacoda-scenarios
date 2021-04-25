@@ -1,12 +1,19 @@
 # Branching and merging
 
+This step will first teach you how to create new branches and switch among them. And finally how to merge and resolve conflicts. For this we created a small scenario where Alice and Bob are adding todo tasks on their own branch to finally merge everything on the main branch.
 
 
 ## Concepts
 
+1. In git, to create and switch to a new branch, you use `git checkout -b "Branch name"`.
+
+2. To change branch, you use `git checkout "Existing branch name"`.
+
+3. To merge a branch in the current one, you execute `git merge "Branch name"`. If a conflict occur, you get a message.
+
 ## Scenario
 
-You can see that the file todo.txt has a todo list `cat todo.txt`{{execute}}. We are going to add the file `pijul add todo.txt `{{execute}} and recorde the changes `pijul record -a -m "Main todo"`{{execute}} (Just close the editor).
+You can see that the file todo.txt has a todo list `cat todo.txt`{{execute}}. We are going to add the file `pijul add todo.txt `{{execute}} and record the changes `pijul record -a -m "Main todo"`{{execute}} (Just close the editor).
 
 The we want to create a new channel bob `pijul fork bob`{{execute}}. We can see `pijul channel`{{execute}} the 2 channels and switch to the newly created `pijul channel switch bob`{{execute}}.
 
@@ -14,9 +21,9 @@ Add a line in the Bob's todo list `vim todo.txt`{{execute}} and record it `pijul
 
 We can do the same for Alice, we create a new channel from the main one `pijul fork alice --channel main`{{execute}} and switch there `pijul channel switch alice`{{execute}}. Add a line `vim todo.txt`{{execute}} and recode the changes `pijul record -a -m "Alice todo"`{{execute}}.
 
-Now we want to merge Bob's channel into Alice. To do so, we simply pull the branche into the current one `pijul pull . --from-channel bob`{{execute}}.
+Now we want to merge Bob's channel into Alice. To do so, we simply pull the branch into the current one `pijul pull . --from-channel bob`{{execute}}. Notice that pijul is not giving any information in case of conflict.
 
-You can see `cat todo.txt`{{execute}} that a conflict occured. To resolve it, simply delete `vim todo.txt`{{execute}} the lines 3, 5 and 7. You can now recorde the merge `pijul record -a -m "Merge todo"`{{execute}} and switch to the main channel `pijul channel switch main`{{execute}}.
+But you can see `cat todo.txt`{{execute}} that a conflict occurred. To resolve it, simply delete `vim todo.txt`{{execute}} the lines 3, 5 and 7. You can now record the merge `pijul record -a -m "Merge todo"`{{execute}} and switch to the main channel `pijul channel switch main`{{execute}}.
 
 We finally merge Alice's channel into the main one `pijul pull . --from-channel alice`{{execute}}, you can see all the patches we are applying. Our todo is now complete `cat todo.txt`{{execute}}
 
