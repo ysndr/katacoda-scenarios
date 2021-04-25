@@ -38,7 +38,8 @@
       "foreground": "pijul-setup.sh"
     },
     "finish": {
-      "text": "finish.md"
+      "text": "finish.md",
+      "title": "Conclusion"
     }
   },
   "environment": {
