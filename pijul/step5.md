@@ -1,30 +1,26 @@
-# Challenge
-
-Finally let's play a small game to check if you understood how the pijul commands work.
-
-In the current directory, you have 3 files.
+# Branching and merging
 
 
 
-## Commands available
-Choose between these commands to complete the challenge. For help run `pijul --help`{{execute}}.
+## Concepts
+
+## Scenario
+
+You can see that the file todo.txt has a todo list `cat todo.txt`{{execute}}. We are going to add the file `pijul add todo.txt `{{execute}} and recorde the changes `pijul record -a -m "Main todo"`{{execute}} (Just close the editor).
+
+The we want to create a new channel bob `pijul fork bob`{{execute}}. We can see `pijul channel`{{execute}} the 2 channels and switch to the newly created `pijul channel switch bob`{{execute}}.
+
+Add a line in the Bob's todo list `vim todo.txt`{{execute}} and record it `pijul record -a -m "Bob todo"`{{execute}}.
+
+We can do the same for Alice, we create a new channel from the main one `pijul fork alice --channel main`{{execute}} and switch there `pijul channel switch alice`{{execute}}. Add a line `vim todo.txt`{{execute}} and recode the changes `pijul record -a -m "Alice todo"`{{execute}}.
+
+Now we want to merge Bob's channel into Alice. To do so, we simply pull the branche into the current one `pijul pull . --from-channel bob`{{execute}}.
+
+You can see `cat todo.txt`{{execute}} that a conflict occured. To resolve it, simply delete `vim todo.txt`{{execute}} the lines 3, 5 and 7. You can now recorde the merge `pijul record -a -m "Merge todo"`{{execute}} and switch to the main channel `pijul channel switch main`{{execute}}.
+
+We finally merge Alice's channel into the main one `pijul pull . --from-channel alice`{{execute}}, you can see all the patches we are applying. Our todo is now complete `cat todo.txt`{{execute}}
 
 
-- `pijul init`{{execute}}
-- `píjul initialize`{{execute}}
-- `pijul add file-ab.txt`{{execute}}
-- `pijul add file-bc.txt`{{execute}}
-- `píjul merge`{{execute}}
-- `píjul commit file-a.txt -m "commit file A"`{{execute}}
-- `píjul commit file-b.txt -m "commit file B"`{{execute}}
-- `píjul commit file-c.txt -m "commit file C"`{{execute}}
-- `píjul bird`{{execute}}
-- `pijul record file-a.txt --message "Record file A"`{{execute}}
-- `pijul record file-b.txt --message "Record file B"`{{execute}}
-- `pijul record file-c.txt --message "Record file C"`{{execute}}
-- `pijul record --message "Make changes"`{{execute}}
-- `pijul record --message "Make changes"`{{execute}}
-- `pijul log`{{execute}}
-- `pijul unrecord --show-changes 1 --reset`{{execute}} (unrecord the last change)
-- `change_files_1`{{execute}} (Make changes to the files)
-- `change_files_a`{{execute}} (Make changes to the files)
+
+
+
