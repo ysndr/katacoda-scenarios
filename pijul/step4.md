@@ -26,4 +26,4 @@ This step will teach you how to clone an existing repository and collaborate.
 
 4. Then we can record your change `pijul record`{{execute}} the git equivalent to `git commit`. You can see that an editor is open, you need to add a record message, save and close.
 
-5. Unlike git, pijul does not have pull request. You simply push to the repository you want to contribute, and the owner can then accept the changes. OPTIONAL : If you create an account, you can now push the changes to the server with `pijul push username@nest.pijul.com/ysndr/Explorations`. This will automatically create a change request to the repository.
+5. Unlike git, pijul does not have pull request. You simply push to the repository you want to contribute, and the owner can then accept the changes. Now if you create an account, you should be able to push the changes to the server with `pijul push username@nest.pijul.com/ysndr/Explorations`. This will automatically create a change request to the repository. But unfortunately this command might not work as pijul is still unstable.
