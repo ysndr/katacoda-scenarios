@@ -41,6 +41,6 @@ As you can see the `pijul record` command shows all the hunks/scoped changes ava
 
 If you want to skip the `add` part you can `record` files directly running e.g.: `pijul record ciao.txt`
 
-Now, say you are unhappy by a change you have `add`ed (`pijul add ciao.txt`{{execute}}) and want to "unstage" it, run the rather intimidatingly sounding `pijul remove ciao.txt` {{execute}}
+Now, say you are unhappy by a change you have `add`ed (`pijul add ciao.txt`{{execute}}) and want to "unstage" it, run the rather intimidatingly sounding `pijul remove ciao.txt`{{execute}}
 
 Here, we have learned how to add and record changes to pijul but mistakes happen. Click *CONTINUE* to see how to handle them.
