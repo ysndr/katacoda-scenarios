@@ -17,9 +17,9 @@ You can see that the file todo.txt has a todo list `cat todo.txt`{{execute}}. We
 
 The we want to create a new channel bob `pijul fork bob`{{execute}}. We can see `pijul channel`{{execute}} the 2 channels and switch to the newly created `pijul channel switch bob`{{execute}}.
 
-Add a line in the Bob's todo list `vim todo.txt`{{execute}} and record it `pijul record -a -m "Bob todo"`{{execute}}.
+Add a line in the Bob's todo list `Wash the car" >> todo.txt`{{execute}} and record it `pijul record -a -m "Bob todo"`{{execute}}.
 
-We can do the same for Alice, we create a new channel from the main one `pijul fork alice --channel main`{{execute}} and switch there `pijul channel switch alice`{{execute}}. Add a line `vim todo.txt`{{execute}} and recode the changes `pijul record -a -m "Alice todo"`{{execute}}.
+We can do the same for Alice, we create a new channel from the main one `pijul fork alice --channel main`{{execute}} and switch there `pijul channel switch alice`{{execute}}. Add a line `Take the dog for a walk" >> todo.txt`{{execute}} and record the changes `pijul record -a -m "Alice todo"`{{execute}}.
 
 Now we want to merge Bob's channel into Alice. To do so, we simply pull the branch into the current one `pijul pull . --from-channel bob`{{execute}}. Notice that pijul is not giving any information in case of conflict.
 
