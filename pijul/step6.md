@@ -13,7 +13,9 @@ Your task is to use different essential pijul commands you have seen before.:
 6. Change the files (using one of the `change_files_*` commands)
 7. and add the new result to the repository
 
-Use the commands below. The task *should* still be possible to finish even if you have used teh wrong pijul commands at some point. There is **no need** to use the command line manually.
+In the end you will end up with a file called either `./file-ab.txt` or `./file-bc.txt` either of these is good as they represent the concept. They do however both contain valuable content, so do not miss out on checking these files.
+
+Use the commands below. The task *should* still be possible to finish even if you have used the wrong pijul commands at some point. There is **no need** to use the command line manually.
 
 Have fun! :)
 

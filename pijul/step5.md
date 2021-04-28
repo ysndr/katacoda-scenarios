@@ -15,7 +15,7 @@ In pijul, instead of branches the concept is called channels. Channels are just 
 
 You can see that the file todo.txt has a todo list `cat todo.txt`{{execute}}. We are going to add the file `pijul add todo.txt `{{execute}} and record the changes `pijul record -a -m "Main todo"`{{execute}} (Just close the editor).
 
-The we want to create a new channel bob `pijul fork bob`{{execute}}. We can see `pijul channel`{{execute}} the 2 channels and switch to the newly created `pijul channel switch bob`{{execute}}.
+We want to create a new channel bob `pijul fork bob`{{execute}}. We can see `pijul channel`{{execute}} the 2 channels and switch to the newly created `pijul channel switch bob`{{execute}}.
 
 Add a line in the Bob's todo list `echo "Wash the car" >> todo.txt`{{execute}} and record it `pijul record -a -m "Bob todo"`{{execute}}.
 
