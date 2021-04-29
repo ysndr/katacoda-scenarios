@@ -21,7 +21,7 @@ Add a line in the Bob's todo list `echo "Wash the car" >> todo.txt`{{execute}} a
 
 We can do the same for Alice, we create a new channel from the main one `pijul fork alice --channel main`{{execute}} and switch there `pijul channel switch alice`{{execute}}. Add a line `echo "Take the dog for a walk" >> todo.txt`{{execute}} and record the changes `pijul record -a -m "Alice todo"`{{execute}}.
 
-Now we want to merge Bob's channel into Alice. To do so, we simply pull the branch into the current one `pijul pull . --from-channel bob`{{execute}}. Notice that pijul is not giving any information in case of conflict.
+Now we want to merge Bob's channel into Alice. To do so, we simply pull the branch into the current one `pijul pull . --from-channel bob`{{execute}}. In the editor you can see the changes you want to apply, just close it (CTRL + x). Notice that pijul is not giving any information in case of conflict.
 
 But you can see `cat todo.txt`{{execute}} that a conflict occurred. To resolve it, simply delete `vim todo.txt`{{execute}} the lines 3, 5 and 7. You can now record the merge `pijul record -a -m "Merge todo"`{{execute}} and switch to the main channel `pijul channel switch main`{{execute}}.
 
